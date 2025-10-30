@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+.admin-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.98) 0%, 
+    rgba(248, 250, 252, 0.95) 50%, 
+    rgba(241, 245, 249, 0.92) 100%
+  );
+  backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 
+    4px 0 32px rgba(0, 0, 0, 0.08),
+    2px 0 16px rgba(0, 0, 0, 0.04),
+    inset -1px 0 0 rgba(255, 255, 255, 0.9);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+/* Sidebar Header */
+.admin-sidebar h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1e293b;
+  padding: 32px 24px 24px;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    #667eea 0%,
+    #764ba2 50%,
+    #f093fb 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+
+.admin-sidebar h3::before {
+  content: '🚀';
+  position: absolute;
+  left: 50%;
+  top: 8px;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  filter: drop-shadow(0 2px 8px rgba(102, 126, 234, 0.3));
+}
+
+.admin-sidebar h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #667eea, #764ba2, transparent);
+  border-radius: 2px;
+}
+
+/* Navigation Container */
+.admin-sidebar nav {
+  flex: 1;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Navigation Links */
+.admin-sidebar nav a {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  color: #64748b;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid transparent;
+}
+
+/* Icon spacing for navigation links */
+.admin-sidebar nav a::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+/* Add specific icons for each navigation item */
+.admin-sidebar nav a[href="/admin"]::before,
+.admin-sidebar nav a[href*="dashboard"]::before {
+  content: '📊';
+  font-size: 16px;
+}
+
+.admin-sidebar nav a[href*="vehicles"]::before {
+  content: '🚗';
+  font-size: 16px;
+}
+
+.admin-sidebar nav a[href*="drivers"]::before {
+  content: '👨‍💼';
+  font-size: 16px;
+}
+
+.admin-sidebar nav a[href*="bookings"]::before {
+  content: '📋';
+  font-size: 16px;
+}
+
+.admin-sidebar nav a[href*="locations"]::before {
+  content: '📍';
+  font-size: 16px;
+}
+
+/* Hover effects */
+.admin-sidebar nav a:hover {
+  color: #334155;
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(102, 126, 234, 0.2);
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.15);
+}
+
+.admin-sidebar nav a:hover::before {
+  opacity: 1;
+}
+
+/* Active link styles */
+.admin-sidebar nav a.active {
+  color: #667eea;
+  background: linear-gradient(135deg, 
+    rgba(102, 126, 234, 0.15) 0%, 
+    rgba(118, 75, 162, 0.1) 100%
+  );
+  border-color: rgba(102, 126, 234, 0.3);
+  font-weight: 600;
+  transform: translateX(6px);
+  box-shadow: 
+    0 8px 25px rgba(102, 126, 234, 0.2),
+    inset 3px 0 0 #667eea;
+}
+
+.admin-sidebar nav a.active::before {
+  opacity: 1;
+  filter: brightness(1.2);
+}
+
+.admin-sidebar nav a.active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -2px;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, #667eea, #764ba2);
+  border-radius: 2px 0 0 2px;
+}
+
+/* Shimmer effect on hover */
+.admin-sidebar nav a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.admin-sidebar nav a:hover::after {
+  left: 100%;
+}
+
+/* Floating particles background effect */
+.admin-sidebar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(1px 1px at 30px 40px, rgba(102, 126, 234, 0.1), transparent),
+    radial-gradient(1px 1px at 80px 120px, rgba(118, 75, 162, 0.08), transparent),
+    radial-gradient(1px 1px at 150px 80px, rgba(240, 147, 251, 0.06), transparent),
+    radial-gradient(1px 1px at 200px 160px, rgba(102, 126, 234, 0.05), transparent);
+  background-repeat: repeat;
+  background-size: 120px 200px;
+  animation: sparkle 20s linear infinite;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+@keyframes sparkle {
+  0% { transform: translateY(0); opacity: 0.6; }
+  50% { opacity: 0.3; }
+  100% { transform: translateY(-200px); opacity: 0.6; }
+}
+
+/* Sidebar toggle for mobile */
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1.2rem;
+  color: #64748b;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+  color: #667eea;
+  transform: scale(1.05);
+}
+
+/* Content area adjustment */
+.admin-content {
+  margin-left: 280px;
+  min-height: 100vh;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .admin-sidebar {
+    width: 260px;
+  }
+  
+  .admin-content {
+    margin-left: 260px;
+  }
+  
+  .admin-sidebar h3 {
+    font-size: 1.5rem;
+    padding: 28px 20px 20px;
+  }
+  
+  .admin-sidebar nav {
+    padding: 16px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: block;
+  }
+  
+  .admin-sidebar {
+    transform: translateX(-100%);
+    width: 280px;
+  }
+  
+  .admin-sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .admin-content {
+    margin-left: 0;
+  }
+  
+  .admin-content.sidebar-open {
+    margin-left: 0;
+  }
+  
+  /* Overlay for mobile */
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-sidebar {
+    width: 100%;
+  }
+  
+  .admin-sidebar h3 {
+    font-size: 1.4rem;
+    padding: 24px 16px 16px;
+  }
+  
+  .admin-sidebar nav {
+    padding: 12px 8px;
+  }
+  
+  .admin-sidebar nav a {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Focus states for accessibility */
+.admin-sidebar nav a:focus {
+  outline: 3px solid rgba(102, 126, 234, 0.4);
+  outline-offset: 2px;
+}
+
+.sidebar-toggle:focus {
+  outline: 3px solid rgba(102, 126, 234, 0.4);
+  outline-offset: 2px;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .admin-sidebar::before {
+    animation: none;
+  }
+  
+  .admin-sidebar,
+  .admin-sidebar nav a,
+  .admin-content {
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .admin-sidebar {
+    background: white;
+    border-right: 2px solid #000;
+  }
+  
+  .admin-sidebar nav a {
+    border: 1px solid #ccc;
+  }
+  
+  .admin-sidebar nav a.active {
+    background: #e6f3ff;
+    border: 2px solid #0066cc;
+  }
+}
+
+/* Print styles */
+@media print {
+  .admin-sidebar {
+    display: none;
+  }
+  
+  .admin-content {
+    margin-left: 0;
+  }
+}

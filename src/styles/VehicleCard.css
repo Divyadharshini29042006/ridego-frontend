@@ -1,0 +1,315 @@
+/* VehicleCard.css */
+
+.vehicle-card {
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 450px;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Vehicle Image */
+.vehicle-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  background: #f3f4f6;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+/* Vehicle Status Dropdown */
+.vehicle-status {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.vehicle-status select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: #ffffff;
+  color: #1f2937;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.vehicle-status select:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.vehicle-status select:hover {
+  border-color: #9ca3af;
+}
+
+/* Vehicle Details */
+.vehicle-details {
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vehicle-details h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 1rem 0;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+/* Details Row */
+.details-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #6b7280;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detail-value {
+  color: #1f2937;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+/* Detail Badges */
+.detail-badge {
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 2px solid;
+}
+
+.fuel-badge {
+  background: #ffffff;
+  border-color: #000000;
+  color: #000000;
+}
+
+.transmission-badge {
+  background: #000000;
+  border-color: #000000;
+  color: #ffffff;
+}
+
+/* Price Section */
+.price-section {
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 2px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-section > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.rent-price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #000000;
+  letter-spacing: -0.5px;
+}
+
+.price-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.deposit-amount {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #000000;
+  text-align: right;
+}
+
+.deposit-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 500;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Status Badge */
+.status {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  text-align: center;
+  border: 2px solid;
+}
+
+.status.available {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+.status.booked {
+  background: #ffffff;
+  color: #000000;
+  border-color: #000000;
+}
+
+.status.maintenance {
+  background: #6b7280;
+  color: #ffffff;
+  border-color: #6b7280;
+}
+
+/* Vehicle Actions */
+.vehicle-actions {
+  padding: 1.25rem;
+  border-top: 2px solid #e5e7eb;
+  display: flex;
+  gap: 0.75rem;
+  background: #f9fafb;
+}
+
+.vehicle-actions button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Inter', sans-serif;
+}
+
+.vehicle-actions button svg {
+  font-size: 1rem;
+}
+
+.vehicle-actions button:first-child {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+.vehicle-actions button:first-child:hover {
+  background: #1f2937;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.vehicle-actions button:nth-child(2) {
+  background: #ffffff;
+  color: #000000;
+  border-color: #000000;
+}
+
+.vehicle-actions button:nth-child(2):hover {
+  background: #000000;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .vehicle-card {
+    max-width: 100%;
+  }
+  
+  .vehicle-image {
+    height: 240px;
+  }
+  
+  .vehicle-details {
+    padding: 1.25rem 1rem;
+  }
+  
+  .vehicle-actions {
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+  
+  .vehicle-actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .vehicle-image {
+    height: 200px;
+  }
+  
+  .vehicle-details h4 {
+    font-size: 1rem;
+  }
+  
+  .vehicle-details {
+    padding: 1rem;
+  }
+  
+  .vehicle-actions {
+    padding: 1rem;
+  }
+  
+  .vehicle-actions button {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.813rem;
+  }
+  
+  .rent-price {
+    font-size: 1.25rem;
+  }
+  
+  .deposit-amount {
+    font-size: 1rem;
+  }
+}

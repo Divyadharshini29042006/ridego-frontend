@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f1f5f9;
+  padding: 20px;
+}
+
+/* 🔹 Fused split card with enhanced shadow */
+.login-split-container {
+  display: flex;
+  width: 1000px;
+  max-width: 95%;
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  /* Enhanced outer box shadow */
+  box-shadow:
+    0 32px 64px rgba(15, 23, 42, 0.12),
+    0 20px 40px rgba(15, 23, 42, 0.08),
+    0 8px 16px rgba(15, 23, 42, 0.05),
+    0 4px 8px rgba(15, 23, 42, 0.03),
+    0 0 0 1px rgba(15, 23, 42, 0.02);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Add hover effect for the container */
+
+
+/* 🔹 Left GIF side */
+.login-gif {
+  flex: 2.7;
+  background-color: #d0e4e2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-gif img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 0;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 🔹 Right form side */
+.login-form-container {
+  flex: 2;
+  background: #ffffff;
+  padding: 60px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Header */
+.login-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.login-header h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.login-header p {
+  color: #354964;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+/* Enhanced input styling with focus states */
+.form-input-large {
+  width: 100%;
+  padding: 16px 16px 16px 48px;
+  border: 2px solid #222528;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  color: #0f172a;
+  height: 52px;
+  transition: all 0.3s ease;
+  background: #ffffff;
+  /* Remove default browser outline */
+  outline: none;
+  /* Removed subtle inner shadow for depth */
+  box-shadow: none;
+}
+
+.form-input-large::placeholder {
+  color: #292c31;
+  transition: color 0.3s ease;
+}
+
+/* Focus state - remove blue outline and add custom styling */
+.form-input-large:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 
+    inset 0 1px 2px rgba(0, 0, 0, 0.05),
+    0 0 0 3px rgba(59, 130, 246, 0.1),
+    0 4px 12px rgba(59, 130, 246, 0.15);
+  transform: translateY(-1px);
+}
+
+.form-input-large:focus::placeholder {
+  color: #64748b;
+}
+
+/* Hover state for inputs */
+.form-input-large:hover {
+  border-color: #475569;
+  box-shadow: 
+    inset 0 1px 2px rgba(0, 0, 0, 0.05),
+    0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #0e1013;
+  transition: color 0.3s ease;
+}
+
+/* Icon color change on focus */
+.input-group:focus-within .input-icon {
+  color: #3b82f6;
+}
+
+/* Enhanced button styling */
+.login-button-large {
+  width: 100%;
+  height: 52px;
+  background: #36454F !important;
+  color: #ffffff;
+  border: none !important;
+  border-radius: 18px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: none !important;
+  outline: none !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-button-large:hover {
+  transform: translateY(-2px);
+  /* Removed hover shadow */
+  box-shadow: none;
+}
+
+.login-button-large:active {
+  transform: translateY(0);
+  /* Removed active shadow */
+  box-shadow: none;
+}
+
+/* Button disabled state */
+.login-button-large:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(224, 207, 207, 0.3);
+  border-top: 2px solid #e0cfcf;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Footer */
+.login-footer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.login-footer p {
+  font-size: 15px;
+  color: #64748b;
+  margin: 8px 0;
+}
+
+.login-footer a {
+  color: #3b82f6;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.login-footer a:hover {
+  color: #2563eb;
+}
+
+/* Add underline animation on hover */
+.login-footer a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #17191a;
+  transition: width 0.3s ease;
+}
+
+.login-footer a:hover::after {
+  width: 100%;
+}
+
+/* Toast Notification - Enhanced */
+.toast {
+  position: fixed !important; /* ✅ Force fixed positioning */
+  top: 20px !important;
+  right: 20px !important;
+  left: auto !important;
+  padding: 12px 24px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  z-index: 9999 !important; /* ✅ Higher z-index */
+  animation: slideIn 0.3s ease, fadeOut 0.3s ease 2.7s forwards; /* ✅ auto-hide */
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.2),
+    0 6px 16px rgba(0, 0, 0, 0.12);
+  max-width: 320px;
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  /* ✅ Ensure it doesn't inherit any positioning */
+  transform: none !important;
+  margin: 0 !important;
+}
+
+.toast:hover {
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.3),
+    0 8px 24px rgba(0, 0, 0, 0.18);
+  transform: scale(1.03); /* ✅ subtle hover effect */
+}
+
+.toast.success {
+  background: linear-gradient(135deg, #0cd477 0%, #1d9e0f 100%);
+}
+
+.toast.error {
+  background: linear-gradient(135deg, #d12f2f 0%, #8b0f0f 100%); /* ✅ fixed */
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toast-content svg {
+  stroke-width: 2.5;
+  stroke: white;
+}
+
+/* ✅ Slide in from right */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ✅ Fade out smoothly */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+/* 🔹 Responsive */
+@media (max-width: 900px) {
+  .login-split-container {
+    flex-direction: column;
+  }
+  .login-gif {
+    padding: 20px;
+  }
+  .login-form-container {
+    padding: 40px 30px;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  .toast {
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+  
+  .login-split-container {
+    border-radius: 16px;
+    margin: 10px;
+  }
+  
+  .login-form-container {
+    padding: 30px 20px;
+  }
+  
+  .login-header h2 {
+    font-size: 28px;
+  }
+}
+
+/* Autofill background override */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  box-shadow: 0 0 0 30px white inset !important;
+  -webkit-text-fill-color: #0f172a !important;
+}

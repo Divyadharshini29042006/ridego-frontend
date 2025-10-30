@@ -1,0 +1,17 @@
+position: relative;
+  width: 100%;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+=======
+.input-wrapper {
+  position: relative;
+  width: 100%;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 44px; /* Added fixed height to match input height */
+}

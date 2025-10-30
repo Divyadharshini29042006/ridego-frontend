@@ -1,0 +1,1450 @@
+/* ========================================
+   MY BOOKINGS - COMPLETE CSS
+   ======================================== */
+
+/* Container */
+.bookings-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 120px 32px 40px;
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+/* Header Section */
+.bookings-header {
+  margin-bottom: 32px;
+}
+
+.bookings-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.bookings-subtitle {
+  font-size: 1rem;
+  color: #6c757d;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Error Message */
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.error-message svg {
+  flex-shrink: 0;
+  stroke: #dc2626;
+}
+
+/* Tabs */
+.bookings-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: transparent;
+  color: #6c757d;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.tab-button:hover {
+  background: #f8f9fa;
+  color: #495057;
+}
+
+.tab-button.active {
+  background: #6366f1;
+  color: #ffffff;
+  border-color: #6366f1;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+}
+
+.tab-button svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.tab-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 8px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-left: 4px;
+}
+
+.tab-button.active .tab-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* Loading State */
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+  gap: 20px;
+}
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  border: 5px solid #e9ecef;
+  border-top: 5px solid #6366f1;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-spinner p {
+  font-size: 1.1rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+/* No Bookings State */
+.no-bookings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 450px;
+  gap: 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 60px 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.no-bookings svg {
+  stroke: #adb5bd;
+  width: 80px;
+  height: 80px;
+}
+
+.no-bookings h3 {
+  font-size: 1.75rem;
+  color: #1a1a1a;
+  font-weight: 700;
+  margin: 0;
+}
+
+.no-bookings p {
+  font-size: 1rem;
+  color: #6c757d;
+  margin: 0;
+  text-align: center;
+  max-width: 400px;
+}
+
+/* Bookings List */
+.bookings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Booking Card */
+.booking-card {
+  display: grid;
+  grid-template-columns: 240px 1fr auto;
+  gap: 24px;
+  padding: 24px;
+  background: #ffffff;
+  border: 2px solid #e9ecef;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.booking-card:hover {
+  border-color: #6366f1;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Vehicle Image */
+.card-vehicle-image {
+  width: 240px;
+  height: 160px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 2px solid #e9ecef;
+  position: relative;
+}
+
+.card-vehicle-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.booking-card:hover .card-vehicle-image img {
+  transform: scale(1.05);
+}
+
+/* Card Info Section */
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.vehicle-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.3px;
+}
+
+.vehicle-type {
+  font-size: 0.9rem;
+  color: #868e96;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+/* Status Badge */
+.booking-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.status-confirmed {
+  background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+  color: #4f46e5;
+  border: 1px solid #c7d2fe;
+}
+
+.status-completed {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+.status-cancelled {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.status-pending {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #d97706;
+  border: 1px solid #fde68a;
+}
+
+.booking-status svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.polling-indicator {
+  display: inline-block;
+  margin-left: 6px;
+  animation: spin 2s linear infinite;
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* Info List */
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: #495057;
+  font-weight: 500;
+}
+
+.info-item svg {
+  stroke: #6c757d;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+/* Driver Info Card */
+.driver-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+  width: fit-content;
+}
+
+.driver-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.driver-info > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.driver-name {
+  font-weight: 700;
+  color: #1a1a1a;
+  font-size: 0.85rem;
+  letter-spacing: -0.2px;
+}
+
+.driver-phone {
+  font-size: 0.75rem;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+}
+
+.driver-phone svg {
+  stroke: #6c757d;
+  width: 12px;
+  height: 12px;
+}
+
+/* Action Buttons Container */
+.booking-card > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 200px;
+}
+
+/* View Details Button */
+.view-details-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  background: #6366f1;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+}
+
+.view-details-btn:hover {
+  background: #4f46e5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.25);
+}
+
+.view-details-btn:active {
+  transform: translateY(0);
+}
+
+.view-details-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Complete Button */
+.view-details-btn[style*="10b981"] {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.view-details-btn[style*="10b981"]:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
+}
+
+/* Cancel Button */
+.view-details-btn[style*="ef4444"] {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+.view-details-btn[style*="ef4444"]:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.3);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.2s ease;
+  padding: 20px;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+  }
+  to { 
+    opacity: 1; 
+  }
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 650px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Modal Header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 32px;
+  border-bottom: 2px solid #f1f3f5;
+  background: linear-gradient(to bottom, #ffffff 0%, #fafbfc 100%);
+}
+
+.modal-header h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.modal-close-btn {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background: #e9ecef;
+  border-color: #dee2e6;
+  transform: rotate(90deg);
+}
+
+.modal-close-btn svg {
+  stroke: #495057;
+  width: 20px;
+  height: 20px;
+}
+
+/* Modal Body */
+.modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.modal-section {
+  padding: 24px 32px;
+  border-bottom: 2px solid #f8f9fa;
+}
+
+.modal-section:last-child {
+  border-bottom: none;
+}
+
+.modal-section-title {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #868e96;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+/* Vehicle Status Header */
+.vehicle-status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.vehicle-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.5px;
+}
+
+.vehicle-subtitle {
+  font-size: 0.95rem;
+  color: #868e96;
+  margin: 0;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+/* Detail Rows */
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  font-size: 0.95rem;
+}
+
+.detail-row:not(:last-child) {
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.detail-row > span:first-child {
+  color: #868e96;
+  font-weight: 600;
+}
+
+.detail-value {
+  color: #1a1a1a;
+  font-weight: 700;
+  text-align: right;
+}
+
+.booking-id-value {
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  color: #6366f1;
+  font-size: 0.85rem;
+  background: #f8f9fa;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* Location Rows */
+.location-row {
+  display: flex;
+  gap: 16px;
+  padding: 14px 0;
+}
+
+.location-row:not(:last-child) {
+  border-bottom: 1px solid #f8f9fa;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+}
+
+.location-row svg {
+  stroke: #6366f1;
+  flex-shrink: 0;
+  margin-top: 2px;
+  width: 22px;
+  height: 22px;
+}
+
+.location-label {
+  font-size: 0.7rem;
+  color: #868e96;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.location-text {
+  font-size: 1rem;
+  color: #1a1a1a;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Driver Modal Info */
+.driver-modal-info {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+}
+
+.driver-modal-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  border: 4px solid #ffffff;
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.driver-modal-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.driver-modal-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.driver-modal-gender {
+  font-size: 0.85rem;
+  color: #868e96;
+  margin: 0;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.driver-modal-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #6366f1;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-top: 4px;
+  transition: all 0.2s ease;
+}
+
+.driver-modal-phone:hover {
+  color: #4f46e5;
+  gap: 10px;
+}
+
+.driver-modal-phone svg {
+  stroke: currentColor;
+  width: 16px;
+  height: 16px;
+}
+
+/* Payment Detail */
+.payment-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+}
+
+.payment-detail > span:first-child {
+  font-size: 0.95rem;
+  color: #868e96;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.payment-price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #6366f1;
+  letter-spacing: -0.5px;
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 24px 32px;
+  border-top: 2px solid #f1f3f5;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  background: linear-gradient(to top, #ffffff 0%, #fafbfc 100%);
+}
+
+.cancel-booking-btn,
+.complete-booking-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.cancel-booking-btn {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+.cancel-booking-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.3);
+  transform: translateY(-2px);
+}
+
+.complete-booking-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.complete-booking-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
+  transform: translateY(-2px);
+}
+
+.cancel-booking-btn:disabled,
+.complete-booking-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.cancel-booking-btn svg,
+.complete-booking-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.modal-close-button {
+  padding: 14px 32px;
+  background: #6366f1;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.modal-close-button:hover {
+  background: #4f46e5;
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.3);
+  transform: translateY(-2px);
+}
+
+.modal-close-button:active {
+  transform: translateY(0);
+}
+
+/* Scrollbar Styling */
+.modal-body::-webkit-scrollbar {
+  width: 10px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #dee2e6 0%, #adb5bd 100%);
+  border-radius: 10px;
+  border: 2px solid #f8f9fa;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #adb5bd 0%, #868e96 100%);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1200px) {
+  .booking-card {
+    grid-template-columns: 200px 1fr;
+  }
+
+  .card-vehicle-image {
+    width: 200px;
+    height: 135px;
+  }
+
+  .booking-card > div:last-child {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .booking-card > div:last-child button {
+    flex: 0 1 auto;
+  }
+}
+
+@media (max-width: 968px) {
+  .bookings-container {
+    padding: 100px 24px 32px;
+  }
+
+  .booking-card {
+    grid-template-columns: 160px 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .card-vehicle-image {
+    width: 160px;
+    height: 110px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bookings-container {
+    padding: 90px 16px 24px;
+  }
+
+  .bookings-header h1 {
+    font-size: 2rem;
+  }
+
+  .bookings-tabs {
+    gap: 8px;
+    padding: 6px;
+  }
+
+  .tab-button {
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+
+  .booking-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .card-vehicle-image {
+    width: 100%;
+    height: 180px;
+  }
+
+  .card-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .booking-status {
+    width: fit-content;
+  }
+
+  .booking-card > div:last-child {
+    flex-direction: column;
+  }
+
+  .booking-card > div:last-child button {
+    width: 100%;
+  }
+
+  .modal-content {
+    max-width: 95%;
+    border-radius: 12px;
+  }
+
+  .modal-header,
+  .modal-section,
+  .modal-footer {
+    padding: 20px;
+  }
+
+  .modal-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .modal-footer {
+    flex-direction: column-reverse;
+  }
+
+  .cancel-booking-btn,
+  .complete-booking-btn,
+  .modal-close-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .bookings-container {
+    padding: 80px 12px 20px;
+  }
+
+  .bookings-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .bookings-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .vehicle-name {
+    font-size: 1.15rem;
+  }
+
+  .modal-header,
+  .modal-section,
+  .modal-footer {
+    padding: 16px;
+  }
+
+  .modal-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .vehicle-title {
+    font-size: 1.25rem;
+  }
+
+  .payment-price {
+    font-size: 1.75rem;
+  }
+}
+
+/* ========================================
+   UTILITIES
+   ======================================== */
+
+/* Prevent text selection on buttons */
+button {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Focus states for accessibility */
+button:focus-visible,
+.tab-button:focus-visible {
+  outline: 3px solid #6366f1;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .bookings-tabs,
+  .view-details-btn,
+  .modal-close-btn,
+  .modal-footer {
+    display: none;
+  }
+  
+  .booking-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+/* ========================================
+   PENALTY MODAL STYLES - ADD TO MyBookings.css
+   ======================================== */
+
+/* Penalty Modal Container */
+.penalty-modal-content {
+  background: #ffffff;
+  border-radius: 20px;
+  max-width: 550px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* Penalty Modal Header */
+.penalty-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 32px;
+  border-bottom: 2px solid #fef3c7;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+}
+
+.penalty-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.penalty-modal-title h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* Penalty Modal Body */
+.penalty-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Penalty Error Message */
+.penalty-error {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+
+.penalty-error svg {
+  flex-shrink: 0;
+}
+
+/* Penalty Booking Info */
+.penalty-booking-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+}
+
+.penalty-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.penalty-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.penalty-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-align: right;
+  word-break: break-word;
+}
+
+/* Penalty Amount Box */
+.penalty-amount-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border-radius: 16px;
+  border: 3px solid #fde68a;
+  gap: 12px;
+}
+
+.penalty-amount-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #92400e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.penalty-amount-value {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #d97706;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+/* Penalty Notice Box */
+.penalty-notice-box {
+  display: flex;
+  gap: 14px;
+  padding: 18px 20px;
+  background: #e0e7ff;
+  border: 2px solid #c7d2fe;
+  border-radius: 12px;
+  align-items: flex-start;
+}
+
+.penalty-notice-box svg {
+  flex-shrink: 0;
+  stroke: #4f46e5;
+  margin-top: 2px;
+}
+
+.penalty-notice-box p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #1e293b;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* Penalty Modal Footer */
+.penalty-modal-footer {
+  padding: 24px 32px;
+  border-top: 2px solid #f1f3f5;
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  background: linear-gradient(to top, #ffffff 0%, #fafbfc 100%);
+}
+
+.penalty-cancel-btn,
+.penalty-pay-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+}
+
+.penalty-cancel-btn {
+  background: #f8f9fa;
+  color: #495057;
+  border: 2px solid #e9ecef;
+}
+
+.penalty-cancel-btn:hover:not(:disabled) {
+  background: #e9ecef;
+  border-color: #dee2e6;
+  transform: translateY(-2px);
+}
+
+.penalty-pay-btn {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
+  min-width: 200px;
+}
+
+.penalty-pay-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4);
+  transform: translateY(-3px);
+}
+
+.penalty-pay-btn:active:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.penalty-cancel-btn:disabled,
+.penalty-pay-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.penalty-pay-btn svg,
+.penalty-cancel-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Penalty Detail Box in Main Modal */
+.penalty-detail-box {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border-radius: 14px;
+  border: 2px solid #fde68a;
+  align-items: flex-start;
+}
+
+.penalty-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+}
+
+.penalty-icon svg {
+  stroke: #ffffff;
+}
+
+.penalty-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.penalty-reason,
+.penalty-amount {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  line-height: 1.5;
+}
+
+.penalty-reason strong,
+.penalty-amount strong {
+  font-weight: 800;
+  color: #92400e;
+}
+
+.penalty-status-paid,
+.penalty-status-unpaid {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 0 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.penalty-status-paid {
+  background: #d1fae5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+.penalty-status-paid svg {
+  stroke: #059669;
+}
+
+.penalty-status-unpaid {
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.penalty-status-unpaid svg {
+  stroke: #dc2626;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .penalty-modal-content {
+    max-width: 95%;
+    border-radius: 16px;
+  }
+
+  .penalty-modal-header,
+  .penalty-modal-body,
+  .penalty-modal-footer {
+    padding: 20px;
+  }
+
+  .penalty-modal-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .penalty-amount-value {
+    font-size: 2.5rem;
+  }
+
+  .penalty-modal-footer {
+    flex-direction: column-reverse;
+  }
+
+  .penalty-cancel-btn,
+  .penalty-pay-btn {
+    width: 100%;
+  }
+
+  .penalty-detail-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .penalty-icon {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .penalty-modal-header,
+  .penalty-modal-body,
+  .penalty-modal-footer {
+    padding: 16px;
+  }
+
+  .penalty-modal-title {
+    gap: 12px;
+  }
+
+  .penalty-modal-title h2 {
+    font-size: 1.25rem;
+  }
+
+  .penalty-amount-value {
+    font-size: 2rem;
+  }
+
+  .penalty-booking-info,
+  .penalty-detail-box {
+    padding: 16px;
+  }
+}

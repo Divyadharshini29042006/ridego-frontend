@@ -1,0 +1,440 @@
+/* Main Container */
+.luxuryAdminDashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+  padding: 8rem 1.5rem 4rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Header Section */
+.dashboardHeader {
+  max-width: 1280px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.dashboardTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.titleDivider {
+  height: 4px;
+  width: 8rem;
+  margin: 0 auto 0.75rem;
+  background: linear-gradient(90deg, #f59e0b, #ec4899, #8b5cf6);
+  border-radius: 2px;
+}
+
+.dashboardSubtitle {
+  color: #64748b;
+  font-size: 1.125rem;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+/* Dashboard Links Grid */
+.dashboardLinksGrid {
+  max-width: 1280px;
+  margin: 0 auto 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.dashboardLinkCard {
+  position: relative;
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dashboardLinkCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dashboardLinkCard:hover .cardOverlay {
+  opacity: 1;
+}
+
+.cardContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+}
+
+.iconWrapper {
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.dashboardLinkCard:hover .iconWrapper {
+  transform: scale(1.1);
+}
+
+.cardIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #ffffff;
+}
+
+.cardLabel {
+  color: #1e293b;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.dashboardLinkCard:hover .cardLabel {
+  color: #0f172a;
+}
+
+/* Solid Color Classes for Icons */
+.gradientAmber {
+  background: #f59e0b;
+}
+
+.gradientBlue {
+  background: #3b82f6;
+}
+
+.gradientPurple {
+  background: #a855f7;
+}
+
+.gradientGreen {
+  background: #22c55e;
+}
+
+.gradientRose {
+  background: #ef4444;
+}
+
+.gradientIndigo {
+  background: #6366f1;
+}
+
+.gradientTeal {
+  background: #14b8a6;
+}
+
+.gradientViolet {
+  background: #8b5cf6;
+}
+
+.gradientEmerald {
+  background: #10b981;
+}
+
+/* Dashboard Widgets Grid */
+.dashboardWidgetsGrid {
+  max-width: 1280px;
+  margin: 0 auto 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.widgetCard {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  transition: all 0.3s ease;
+}
+
+.widgetCard:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.widgetContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.widgetIconWrapper {
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.widgetIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #ffffff;
+}
+
+.widgetText {
+  flex: 1;
+}
+
+.widgetTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.widgetDescription {
+  color: #64748b;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.widgetLink {
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+  transition: all 0.2s ease;
+}
+
+.linkAmber {
+  color: #d97706;
+  text-decoration-color: #fbbf24;
+}
+
+.linkAmber:hover {
+  color: #b45309;
+  text-decoration-color: #f59e0b;
+}
+
+.linkBlue {
+  color: #2563eb;
+  text-decoration-color: #60a5fa;
+}
+
+.linkBlue:hover {
+  color: #1d4ed8;
+  text-decoration-color: #3b82f6;
+}
+
+/* Summary Cards Grid */
+.summaryCardsGrid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+}
+
+.summaryCard {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  transition: all 0.3s ease;
+}
+
+.summaryCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.summaryHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.summaryIconWrapper {
+  padding: 0.625rem;
+  border-radius: 0.5rem;
+}
+
+.cardAmber .summaryIconWrapper {
+  background-color: #fef3c7;
+}
+
+.cardEmerald .summaryIconWrapper {
+  background-color: #d1fae5;
+}
+
+.cardBlue .summaryIconWrapper {
+  background-color: #dbeafe;
+}
+
+.cardPurple .summaryIconWrapper {
+  background-color: #f3e8ff;
+}
+
+.summaryIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.cardAmber .summaryIcon {
+  color: #d97706;
+}
+
+.cardEmerald .summaryIcon {
+  color: #059669;
+}
+
+.cardBlue .summaryIcon {
+  color: #2563eb;
+}
+
+.cardPurple .summaryIcon {
+  color: #7c3aed;
+}
+
+.loadingSpinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #e2e8f0;
+  border-top-color: #475569;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.summaryContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.summaryLabel {
+  color: #64748b;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.summaryValue {
+  color: #1e293b;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .luxuryAdminDashboard {
+    padding: 7rem 1.5rem 3rem;
+  }
+
+  .dashboardLinksGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .luxuryAdminDashboard {
+    padding: 6rem 1rem 2.5rem;
+  }
+
+  .dashboardHeader {
+    margin-bottom: 2rem;
+  }
+
+  .dashboardLinksGrid {
+    grid-template-columns: 1fr;
+    margin-bottom: 3rem;
+  }
+
+  .dashboardWidgetsGrid {
+    grid-template-columns: 1fr;
+    margin-bottom: 3rem;
+  }
+
+  .summaryCardsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboardTitle {
+    font-size: 2rem;
+  }
+
+  .titleDivider {
+    width: 6rem;
+  }
+
+  .dashboardSubtitle {
+    font-size: 1rem;
+  }
+
+  .dashboardLinkCard {
+    padding: 1.25rem;
+  }
+
+  .widgetCard {
+    padding: 1.5rem;
+  }
+
+  .summaryCardsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus States */
+.dashboardLinkCard:focus,
+.widgetLink:focus {
+  outline: 3px solid rgba(99, 102, 241, 0.5);
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .dashboardLinkCard,
+  .widgetCard,
+  .summaryCard {
+    border: 2px solid #1e293b;
+  }
+
+  .dashboardTitle,
+  .cardLabel,
+  .widgetTitle,
+  .summaryValue {
+    color: #000000;
+  }
+}

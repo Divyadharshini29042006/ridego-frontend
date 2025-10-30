@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+.signupContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 120px 20px 40px;
+  font-family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
+}
+
+.signupCard {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 48px;
+  max-width: 440px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.signupCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.signupHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.signupTitle {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.signupSubtitle {
+  font-size: 15px;
+  color: #666666;
+  margin: 0;
+}
+
+.progressContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  gap: 12px;
+}
+
+.stepWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.stepCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  color: #999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.stepCircle.active {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.stepLabel {
+  font-size: 12px;
+  color: #999999;
+  font-weight: 500;
+}
+
+.stepLabel.active {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.progressLine {
+  width: 60px;
+  height: 2px;
+  background-color: #e5e5e5;
+  transition: all 0.3s ease;
+}
+
+.progressLine.active {
+  background-color: #1a1a1a;
+}
+
+.formGroup {
+  margin-bottom: 24px;
+}
+
+.formGroup:last-child {
+  margin-bottom: 32px;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e5e5e5;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #1a1a1a;
+  background-color: #ffffff;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border-color: #1a1a1a;
+}
+
+.input.error {
+  border-color: #ef4444;
+}
+
+.dateInput {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e5e5e5;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #1a1a1a;
+  background-color: #ffffff;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.dateInput:focus {
+  border-color: #1a1a1a;
+}
+
+.dateInput.error {
+  border-color: #ef4444;
+}
+
+.passwordWrapper {
+  position: relative;
+}
+
+.passwordInput {
+  width: 100%;
+  padding: 12px 48px 12px 16px;
+  border: 2px solid #e5e5e5;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #1a1a1a;
+  background-color: #ffffff;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.passwordInput:focus {
+  border-color: #1a1a1a;
+}
+
+.passwordInput.error {
+  border-color: #ef4444;
+}
+
+.toggleBtn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #999999;
+  font-size: 18px;
+}
+
+.errorText {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.button {
+  width: 100%;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  transform: translateY(0);
+}
+
+.button:hover {
+  background-color: #333333;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.button:disabled:hover {
+  background-color: #1a1a1a;
+  transform: none;
+  box-shadow: none;
+}
+
+.backButton {
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid #e5e5e5;
+  outline: none;
+  background-color: #ffffff;
+  color: #666666;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.backButton:hover {
+  background-color: #f5f5f5;
+  border-color: #d4d4d4;
+}
+
+.buttonGroup {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 12px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 32px 0;
+  gap: 16px;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background-color: #e5e5e5;
+}
+
+.dividerText {
+  font-size: 13px;
+  color: #999999;
+  font-weight: 500;
+}
+
+.signupFooter {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 14px;
+  color: #666666;
+}
+
+.link {
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.link:hover {
+  opacity: 0.7;
+}
+
+.toast {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 16px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 1000;
+  max-width: 400px;
+  border-left: 4px solid #10b981;
+}
+
+.toast.error {
+  border-left-color: #ef4444;
+}
+
+.toastContent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toastIcon {
+  flex-shrink: 0;
+  color: #10b981;
+}
+
+.toastIcon.error {
+  color: #ef4444;
+}
+
+.toastMessage {
+  color: #1a1a1a;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.googleSignin {
+  display: flex;
+  justify-content: center;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .signupContainer {
+    padding: 100px 20px 40px;
+  }
+}
+
+/* Date input styling */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  padding: 4px;
+  margin-right: 0;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}

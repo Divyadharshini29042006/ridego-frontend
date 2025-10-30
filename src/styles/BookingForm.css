@@ -1,0 +1,1273 @@
+/*src/styles/BookingForm.css*/
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+/* Booking Form Container */
+.vehicle-details-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 120px 40px 60px 40px;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #fafbfc;
+  min-height: 100vh;
+}
+
+/* Back Button */
+.back-button-container {
+  margin-bottom: 30px;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border: 2px solid #e1e8ed;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #2c3e50;
+  cursor: pointer;
+  padding: 14px 28px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.back-button:hover {
+  background: #f8fafb;
+  border-color: #2c3e50;
+  transform: translateX(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.back-icon {
+  font-size: 13px;
+  transition: transform 0.3s ease;
+}
+
+.back-button:hover .back-icon {
+  transform: translateX(-2px);
+}
+
+/* Main Content Layout */
+.vehicle-content {
+  display: grid;
+  grid-template-columns: 1fr 440px;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Left Section */
+.left-section {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Vehicle Header */
+.vehicle-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 36px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #e1e8ed;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.vehicle-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #1a202c;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.vehicle-subtitle {
+  font-size: 16px;
+  color: #718096;
+  margin: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* Right Section */
+.right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: sticky;
+  top: 100px;
+}
+
+/* Booking Form Card */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 36px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #e1e8ed;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Input Group */
+.date-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.date-input-group label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.label-icon {
+  font-size: 15px;
+  color: #4a5568;
+}
+
+/* Custom Select/Dropdown Styling */
+.date-picker-input,
+select.date-picker-input {
+  width: 100%;
+  padding: 18px 20px;
+  border: 2px solid #e1e8ed;
+  border-radius: 14px;
+  font-size: 15px;
+  color: #2c3e50;
+  background: #ffffff;
+  transition: all 0.3s ease;
+  outline: none;
+  font-weight: 500;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Custom dropdown arrow */
+select.date-picker-input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%232c3e50' d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 14px;
+  padding-right: 45px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.date-picker-input:hover,
+select.date-picker-input:hover {
+  border-color: #cbd5e0;
+  background: #f8fafb;
+}
+
+.date-picker-input:focus,
+select.date-picker-input:focus {
+  border-color: #4299e1;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+}
+
+.date-picker-input::placeholder {
+  color: #a0aec0;
+  font-weight: 400;
+}
+
+/* Textarea specific styling */
+textarea.date-picker-input {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.6;
+}
+
+/* Time input */
+input[type="time"].date-picker-input {
+  cursor: pointer;
+}
+
+/* Number input */
+input[type="number"].date-picker-input {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* React DatePicker Wrapper */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container {
+  width: 100%;
+}
+
+.react-datepicker__input-container input {
+  width: 100% !important;
+  padding: 18px 20px !important;
+  border: 2px solid #e1e8ed !important;
+  border-radius: 14px !important;
+  font-size: 15px !important;
+  color: #2c3e50 !important;
+  background: #ffffff !important;
+  transition: all 0.3s ease !important;
+  outline: none !important;
+  font-weight: 500 !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  cursor: pointer !important;
+}
+
+.react-datepicker__input-container input:hover {
+  border-color: #cbd5e0 !important;
+  background: #f8fafb !important;
+}
+
+.react-datepicker__input-container input:focus {
+  border-color: #4299e1 !important;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1) !important;
+  background: #ffffff !important;
+}
+
+/* DatePicker Calendar */
+.react-datepicker {
+  border: 2px solid #e1e8ed !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
+  border-radius: 16px !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  background: #ffffff !important;
+}
+
+.react-datepicker__header {
+  background: #f8fafb !important;
+  border-bottom: 2px solid #e1e8ed !important;
+  border-radius: 16px 16px 0 0 !important;
+  padding: 16px !important;
+}
+
+.react-datepicker__current-month {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #2c3e50 !important;
+}
+
+.react-datepicker__day-name {
+  color: #718096 !important;
+  font-weight: 600 !important;
+}
+
+.react-datepicker__day {
+  border-radius: 10px !important;
+  transition: all 0.2s ease !important;
+  margin: 2px !important;
+  font-weight: 500 !important;
+  color: #2c3e50 !important;
+}
+
+.react-datepicker__day:hover {
+  background: #edf2f7 !important;
+  color: #2c3e50 !important;
+}
+
+.react-datepicker__day--selected {
+  background: #4299e1 !important;
+  color: white !important;
+  font-weight: 700 !important;
+}
+
+.react-datepicker__day--selected:hover {
+  background: #3182ce !important;
+}
+
+.react-datepicker__day--disabled {
+  color: #cbd5e0 !important;
+  cursor: not-allowed !important;
+}
+
+/* Price Breakdown */
+.price-breakdown {
+  background: #f8fafb;
+  border: 2px solid #e1e8ed;
+  border-radius: 14px;
+  padding: 20px;
+  margin: 10px 0;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 15px;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.price-row.total {
+  border-top: 2px solid #e1e8ed;
+  margin-top: 14px;
+  padding-top: 18px;
+  font-weight: 700;
+  font-size: 17px;
+  color: #1a202c;
+}
+
+/* Alert/Info Boxes */
+.info-box {
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.info-box.error {
+  background: #fff5f5;
+  border: 2px solid #fc8181;
+  color: #991b1b;
+}
+
+.info-box.warning {
+  background: #fff7ed;
+  border: 2px solid #fed7aa;
+  color: #92400e;
+}
+
+.info-box.info {
+  background: #f0f9ff;
+  border: 2px solid #bae6fd;
+  color: #0c4a6e;
+}
+
+.info-box.success {
+  background: #f0fdf4;
+  border: 2px solid #bbf7d0;
+  color: #166534;
+}
+
+/* Buttons */
+.book-now-btn {
+  width: 100%;
+  padding: 20px 32px;
+  background: #4299e1;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  box-shadow: 0 4px 16px rgba(66, 153, 225, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.book-now-btn:hover:not(:disabled) {
+  background: #3182ce;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(66, 153, 225, 0.4);
+}
+
+.book-now-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.book-now-btn:disabled {
+  background: #cbd5e0;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Toggle Buttons (Driver/Pickup Options) */
+.toggle-button-group {
+  display: flex;
+  gap: 12px;
+}
+
+.toggle-button {
+  flex: 1;
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid #e1e8ed;
+  background: #ffffff;
+  color: #2c3e50;
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+}
+
+.toggle-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-button.active {
+  background: #4299e1;
+  border-color: #4299e1;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(66, 153, 225, 0.25);
+}
+
+/* Increment/Decrement Buttons */
+.increment-button {
+  min-width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 2px solid #e1e8ed;
+  color: #2c3e50;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.increment-button:hover:not(:disabled) {
+  background: #f8fafb;
+  border-color: #2c3e50;
+  transform: scale(1.05);
+}
+
+.increment-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Vehicle Cards */
+.vehicle-card {
+  padding: 24px;
+  background: #f8fafb;
+  border-radius: 16px;
+  border: 2px solid #e1e8ed;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.vehicle-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.vehicle-card-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #1a202c;
+}
+
+.remove-vehicle-btn {
+  background: #fee2e2;
+  color: #dc2626;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.remove-vehicle-btn:hover {
+  background: #fecaca;
+  transform: scale(1.05);
+}
+
+/* Driver Cards */
+.driver-card {
+  padding: 16px;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.driver-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.driver-card.selected {
+  background: #e0e7ff;
+  border-color: #3b82f6;
+}
+
+.driver-card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.driver-info h5 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.driver-details {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.driver-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.driver-action-btn {
+  padding: 8px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  color: #1e293b;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.driver-action-btn:hover {
+  background: #e2e8f0;
+  transform: scale(1.1);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 80vh;
+  overflow: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.modal-title {
+  margin: 0 0 4px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.modal-subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #64748b;
+  transition: all 0.2s ease;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close-btn:hover {
+  color: #1e293b;
+  transform: rotate(90deg);
+}
+
+/* Vehicle Grid in Modal */
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.vehicle-selector-card {
+  padding: 20px;
+  border: 2px solid #e1e8ed;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.vehicle-selector-card:hover {
+  border-color: #4299e1;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.vehicle-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: #4299e1;
+}
+
+.vehicle-selector-card h4 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.vehicle-selector-card p {
+  margin: 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.vehicle-price {
+  margin: 8px 0 0 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #4299e1;
+}
+
+/* Fare Summary Cards */
+.fare-vehicle-card {
+  padding: 16px;
+  background: #f8fafb;
+  border: 2px solid #e1e8ed;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.fare-vehicle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.fare-vehicle-name {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.fare-vehicle-amount {
+  font-size: 16px;
+  font-weight: 700;
+  color: #4299e1;
+}
+
+.fare-breakdown {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.fare-breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+
+/* Total Fare Card */
+.total-fare-card {
+  margin-top: 20px;
+  padding: 24px;
+  background: linear-gradient(135deg, #4299e1 0%, #3b82f6 100%);
+  border-radius: 16px;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(66, 153, 225, 0.3);
+}
+
+.total-fare-subtitle {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
+
+.total-fare-amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-fare-label {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.total-fare-value {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+/* No Card Text */
+.no-card-text {
+  font-size: 14px;
+  color: #718096;
+  text-align: center;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Loading State */
+.loading {
+  text-align: center;
+  padding: 4rem;
+  font-size: 1.2rem;
+  color: #718096;
+}
+
+/* Pickup Location Info Box */
+.pickup-info-box {
+  padding: 24px;
+  background: #f0f9ff;
+  border-radius: 16px;
+  border: 2px solid #bae6fd;
+  margin-bottom: 24px;
+}
+
+.pickup-info-title {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0c4a6e;
+}
+
+.pickup-location-display {
+  padding: 16px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #cbd5e0;
+}
+
+.pickup-location-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.pickup-location-icon {
+  color: #4299e1;
+  margin-top: 4px;
+  font-size: 18px;
+}
+
+.pickup-location-title {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.pickup-location-address {
+  margin: 0;
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Important Info List */
+.info-list {
+  margin: 0;
+  padding: 0 0 0 20px;
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.8;
+}
+
+.info-list li {
+  margin-bottom: 8px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.left-section,
+.right-section {
+  animation: slideUp 0.5s ease;
+}
+
+.right-section {
+  animation-delay: 0.1s;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .vehicle-content {
+    grid-template-columns: 1fr 380px;
+    gap: 32px;
+  }
+  
+  .vehicle-details-container {
+    padding: 110px 20px 50px 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .vehicle-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .right-section {
+    order: -1;
+    position: static;
+  }
+  
+  .vehicle-details-container {
+    padding: 110px 15px 40px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vehicle-details-container {
+    padding: 95px 10px 30px 10px;
+  }
+  
+  .vehicle-title {
+    font-size: 32px;
+  }
+  
+  .vehicle-header,
+  .booking-form {
+    padding: 28px;
+  }
+  
+  .book-now-btn {
+    padding: 18px 28px;
+    font-size: 15px;
+  }
+
+  .modal-content {
+    padding: 24px;
+    width: 95%;
+  }
+
+  .vehicle-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .vehicle-details-container {
+    padding: 90px 10px 30px 10px;
+  }
+  
+  .vehicle-title {
+    font-size: 26px;
+  }
+  
+  .booking-form {
+    gap: 24px;
+    padding: 24px;
+  }
+  
+  .date-picker-input,
+  select.date-picker-input {
+    padding: 16px 18px;
+    font-size: 14px;
+  }
+  
+  select.date-picker-input {
+    padding-right: 40px;
+    background-size: 12px;
+  }
+
+  .toggle-button-group {
+    flex-direction: column;
+  }
+
+  .vehicle-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .modal-content {
+    padding: 20px;
+  }
+
+  .modal-title {
+    font-size: 20px;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafb;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+/* Print Styles */
+@media print {
+  .back-button-container,
+  .book-now-btn,
+  .modal-overlay {
+    display: none;
+  }
+  
+  .vehicle-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .right-section {
+    position: static;
+  }
+}
+
+/* Add these styles to your existing BookingForm.css file */
+
+/* Gender Filter Buttons */
+.filter-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  border: 2px solid #e1e8ed;
+  background: #ffffff;
+  color: #2c3e50;
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.filter-btn:hover {
+  background: #f8fafb;
+  border-color: #cbd5e0;
+}
+
+.filter-btn.active {
+  background: #4299e1;
+  border-color: #4299e1;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(66, 153, 225, 0.25);
+}
+
+/* Driver List Container */
+.driver-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 500px;
+  overflow-y: auto;
+  padding: 4px;
+}
+
+/* Driver Card */
+.driver-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  position: relative;
+}
+
+.driver-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e0;
+}
+
+.driver-card.selected {
+  background: linear-gradient(135deg, #e0e7ff 0%, #e0f2fe 100%);
+  border-color: #3b82f6;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.2);
+}
+
+.driver-card.assigning {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Driver Avatar */
+.driver-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4299e1 0%, #3b82f6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.driver-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Driver Info Content */
+.driver-info-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.driver-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.driver-name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.selected-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  background: #10b981;
+  color: white;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Driver Rating */
+.driver-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.driver-rating svg {
+  color: #f59e0b;
+  font-size: 14px;
+}
+
+.driver-divider {
+  color: #cbd5e0;
+}
+
+/* Driver Contact Row */
+.driver-contact-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.driver-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.contact-icon {
+  color: #4299e1;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+/* Assigning Spinner */
+.assigning-spinner {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #4299e1;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+/* Responsive Driver Cards */
+@media (max-width: 768px) {
+  .driver-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .driver-avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 32px;
+  }
+
+  .driver-name-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .driver-contact-row {
+    align-items: center;
+  }
+
+  .filter-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .driver-list {
+    max-height: 400px;
+  }
+
+  .driver-avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .driver-name {
+    font-size: 14px;
+  }
+
+  .driver-contact-item {
+    font-size: 12px;
+  }
+
+  .selected-badge {
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+}
+
+/* Scrollbar for Driver List */
+.driver-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.driver-list::-webkit-scrollbar-track {
+  background: #f8fafc;
+  border-radius: 4px;
+}
+
+.driver-list::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 4px;
+}
+
+.driver-list::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}

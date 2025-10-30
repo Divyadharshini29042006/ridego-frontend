@@ -1,0 +1,17 @@
+/* ...existing code... */
+:root{
+  --primary:#6b46c1;
+  --muted:#6b7280;
+  --bg:#ffffff;
+}
+
+/* reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body,#root{height:100%;font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:#111}
+
+/* Generic shared helpers (only truly shared) */
+.container{max-width:1200px;margin:0 auto;padding:0 16px}
+.card{background:#fff;border-radius:8px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+.btn{display:inline-block;padding:8px 14px;border-radius:6px;border:0;cursor:pointer}
+.btn-primary{background:var(--primary);color:#fff}
+/* ...existing code... */

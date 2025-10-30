@@ -1,0 +1,973 @@
+/*src/styles/Home.module.css*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* Background */
+.homeContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 140px;
+  background: linear-gradient(135deg, #b8d4e3 0%, #ecfaff 50%, #d4e7f0 100%);
+  font-family: 'Poppins', 'Inter', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Title */
+.title {
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 80px;
+  color: #131313;
+  text-align: center;
+  letter-spacing: -1px;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 0 2px 10px rgba(45, 55, 72, 0.15);
+  animation: fadeInUp 1s ease-out;
+}
+
+.titleIcon {
+  margin-right: 16px;
+  color: #030506;
+  vertical-align: middle;
+}
+
+/* Search Box */
+.searchBox {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px) saturate(180%);
+  padding: 32px 44px;
+  border-radius: 60px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12), 0 8px 25px rgba(0, 0, 0, 0.08);
+  width: 95%;
+  max-width: 1250px;
+  gap: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  z-index: 100;
+  animation: fadeInUp 1.2s ease-out 0.3s both;
+  transition: all 0.4s ease;
+}
+
+.searchBox:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15), 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Group */
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.inputGroup label {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #2d3748;
+  padding-left: 4px;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.3px;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 16px;
+  background: #fff;
+  min-width: 190px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 200;
+}
+
+.inputWrapper:focus-within {
+  border-color: #000000;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+  transform: translateY(-1px);
+}
+
+.inputWrapper select,
+.inputWrapper input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  flex: 1;
+  color: #2d3748;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  width: 100%;
+}
+
+.inputWrapper select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23667eea' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  padding-right: 40px;
+  position: relative;
+  z-index: 300;
+}
+
+/* DatePicker styling to match select boxes */
+.inputWrapper :global(.react-datepicker-wrapper) {
+  width: 100%;
+}
+
+.inputWrapper :global(.react-datepicker__input-container) {
+  width: 100%;
+}
+
+.inputWrapper :global(.react-datepicker__input-container input) {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: #2d3748;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.inputWrapper :global(.react-datepicker__input-container input::placeholder) {
+  color: #a0aec0;
+}
+
+/* Icons */
+.icon {
+  margin-right: 12px;
+  color: #000000;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+/* Search Button */
+.searchBtn {
+  background: linear-gradient(135deg, #3a3b41 0%, #302448 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 16px 40px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  align-self: end;
+  height: fit-content;
+  white-space: nowrap;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(4, 4, 6, 0.4);
+  position: relative;
+  z-index: 100;
+}
+
+.searchBtn:hover {
+  background: linear-gradient(135deg, #2e3042 0%, #221e2b 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(29, 32, 46, 0.5);
+}
+
+.searchBtn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Car Image */
+.carImage {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1.5s ease-out 0.6s both;
+}
+
+.carImage img {
+  max-width: none;
+  height: 400px;
+  filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.15));
+  transition: all 0.4s ease;
+}
+
+.carImage:hover img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.2));
+}
+
+/* Section Titles */
+.sectionTitle {
+  font-size: 48px;
+  font-weight: 700;
+  color: #000000 !important;
+  text-align: center;
+  margin-bottom: 16px;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -1px;
+}
+
+.sectionSubtitle {
+  font-size: 18px;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* ===================== FEATURED VEHICLES SECTION ===================== */
+.featuredVehiclesSection {
+  width: 100%;
+  max-width: 1400px;
+  margin: 100px auto;
+  padding: 0 20px;
+  animation: fadeInUp 2.2s ease-out 1.5s both;
+}
+
+/* ===================== VEHICLE GRID & CARD ===================== */
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  font-size: 18px;
+  color: #64748b;
+}
+
+.vehicleGridHome {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.homeVehicleCard {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  min-height: 420px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.homeVehicleCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.homeVehicleCard:hover::before {
+  opacity: 1;
+}
+
+.homeVehicleCard:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.imageWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  max-height: 240px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  overflow: hidden;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.homeVehicleCard:hover .imageWrapper img {
+  transform: scale(1.08);
+}
+
+.badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  z-index: 10;
+}
+
+.price {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.homeVehicleCard:hover .price {
+  transform: scale(1.05);
+  background: rgba(0, 0, 0, 0.95);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.vehicleInfo {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.vehicleInfo h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1e293b;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.3;
+}
+
+.vehicleInfo p {
+  font-size: 15px;
+  color: #64748b;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.vehicleMeta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  font-size: 13px;
+  color: #475569;
+  font-weight: 500;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.vehicleMeta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0;
+}
+
+.vehicleMeta span svg {
+  color: #4299e1;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* ===================== EXPLORE ALL CARS BUTTON ===================== */
+.exploreButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 20px;
+  padding: 0 20px;
+}
+
+.exploreAllBtn {
+  background: linear-gradient(135deg, #4299e1 0%, #667eea 100%);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 15px rgba(66, 153, 225, 0.4);
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
+.exploreAllBtn:hover {
+  background: linear-gradient(135deg, #3182ce 0%, #5a67d8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(66, 153, 225, 0.5);
+}
+
+.exploreAllBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(66, 153, 225, 0.3);
+}
+
+/* ===================== PROMOTIONAL SECTION ===================== */
+.promoSection {
+  width: 100%;
+  max-width: 1600px;
+  margin: 120px auto 100px;
+  padding: 0 40px;
+  animation: fadeInUp 2.5s ease-out 1.8s both;
+}
+
+.promoContent {
+  background: linear-gradient(135deg, #4299e1 0%, #667eea 100%);
+  border-radius: 24px;
+  padding: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  box-shadow: 0 20px 60px rgba(70, 153, 225, 0.3);
+}
+
+.promoContent::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.promoText {
+  flex: 1;
+  max-width: 500px;
+  z-index: 2;
+  position: relative;
+}
+
+.promoText h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+.promoText p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 32px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.listCarBtn {
+  background: rgba(255, 255, 255, 0.95);
+  color: #4299e1;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+}
+
+.listCarBtn:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+.promoImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+
+.promoImage img {
+  max-width: 100%;
+  height: auto;
+  max-height: 250px;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+  transition: transform 0.4s ease;
+}
+
+.promoContent:hover .promoImage img {
+  transform: scale(1.05);
+}
+
+/* ===================== TESTIMONIALS SECTION ===================== */
+.testimonialsSection {
+  width: 100%;
+  max-width: 1600px;
+  margin: 100px auto;
+  padding: 0 40px;
+  animation: fadeInUp 2.8s ease-out 2.1s both;
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.testimonialCard {
+  background: #fff;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonialCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(66, 153, 225, 0.02) 0%, rgba(102, 126, 234, 0.02) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.testimonialCard:hover::before {
+  opacity: 1;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.reviewerInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.reviewerAvatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e2e8f0;
+  transition: border-color 0.3s ease;
+}
+
+.testimonialCard:hover .reviewerAvatar {
+  border-color: #4299e1;
+}
+
+.reviewerInfo h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.reviewerInfo p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+.stars {
+  font-size: 16px;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+
+.testimonialText {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4a5568;
+  font-style: italic;
+  position: relative;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.testimonialText::before {
+  content: '"';
+  position: absolute;
+  left: 0;
+  top: -5px;
+  font-size: 32px;
+  color: #4299e1;
+  font-family: 'Georgia', serif;
+  line-height: 1;
+}
+
+/* ===================== NEWSLETTER SECTION ===================== */
+.newsletterSection {
+  width: 100%;
+  max-width: 1600px;
+  margin: 100px auto 60px;
+  padding: 0 40px;
+  animation: fadeInUp 3.1s ease-out 2.4s both;
+}
+
+.newsletterForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px;
+  border-radius: 60px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.newsletterInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 16px 24px;
+  font-size: 16px;
+  background: transparent;
+  color: #2d3748;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.newsletterInput::placeholder {
+  color: #64748b;
+}
+
+.newsletterBtn {
+  background: linear-gradient(135deg, #4299e1 0%, #667eea 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'Poppins', sans-serif;
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(66, 153, 225, 0.4);
+}
+
+.newsletterBtn:hover {
+  background: linear-gradient(135deg, #3182ce 0%, #5a67d8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(66, 153, 225, 0.5);
+}
+
+/* ===================== WHATSAPP FLOATING BUTTON ===================== */
+.whatsappFloat {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  text-decoration: none;
+  animation: pulse 2s infinite;
+}
+
+.whatsappFloat:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+  color: white;
+  text-decoration: none;
+}
+
+/* ===================== ANIMATIONS ===================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1); }
+  100% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); }
+}
+
+/* ===================== RESPONSIVE DESIGN ===================== */
+@media (max-width: 1400px) {
+  .testimonialsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .sectionTitle {
+    font-size: 42px;
+  }
+  
+  .title {
+    font-size: 48px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .vehicleGridHome {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1400px;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 769px) {
+  .vehicleGridHome {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  
+  .homeVehicleCard {
+    min-height: 380px;
+  }
+  
+  .imageWrapper {
+    min-height: 200px;
+    max-height: 200px;
+  }
+  
+  .vehicleInfo h3 {
+    font-size: 18px;
+  }
+  
+  .vehicleMeta {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .searchBox {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 28px 32px;
+    gap: 20px;
+  }
+  
+  .searchBtn {
+    align-self: stretch;
+    justify-self: stretch;
+  }
+  
+  .promoContent {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    padding: 50px 40px;
+  }
+  
+  .promoText {
+    max-width: none;
+  }
+  
+  .promoText h2 {
+    font-size: 36px;
+  }
+  
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 481px) {
+  .vehicleGridHome {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 15px;
+  }
+  
+  .homeVehicleCard {
+    min-height: 360px;
+  }
+  
+  .imageWrapper {
+    min-height: 180px;
+    max-height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .homeContainer {
+    padding-top: 100px;
+  }
+  
+  .title {
+    font-size: 36px;
+    margin-bottom: 60px;
+  }
+  
+  .sectionTitle {
+    font-size: 32px;
+  }
+  
+  .searchBox {
+    width: 90%;
+    padding: 24px;
+  }
+  
+  .inputWrapper {
+    min-width: auto;
+  }
+  
+  .carImage {
+    margin-top: 60px;
+  }
+  
+  .carImage img {
+    height: 300px;
+  }
+  
+  .newsletterForm {
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  
+  .newsletterInput, .newsletterBtn {
+    width: 100%;
+  }
+  
+  .testimonialCard {
+    padding: 24px;
+  }
+  
+  .promoContent {
+    padding: 40px 24px;
+  }
+  
+  .promoText h2 {
+    font-size: 28px;
+  }
+  
+  .whatsappFloat {
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 28px;
+  }
+  
+  .sectionTitle {
+    font-size: 24px;
+  }
+  
+  .testimonialsGrid {
+    padding: 0 20px;
+  }
+  
+  .homeContainer {
+    padding: 80px 20px 40px;
+  }
+  
+  .searchBox {
+    width: 100%;
+  }
+  
+  .vehicleGridHome {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 20px;
+  }
+  
+  .homeVehicleCard {
+    min-height: 380px;
+  }
+  
+  .imageWrapper {
+    min-height: 220px;
+    max-height: 220px;
+  }
+  
+  .vehicleInfo h3 {
+    font-size: 20px;
+  }
+  
+  .vehicleMeta {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}

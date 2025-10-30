@@ -1,0 +1,1043 @@
+/* MDriver.module.css - Modern Driver Management Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.driverContainer {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  padding: 2rem;
+  background: #ffffff;
+  min-height: 100vh;
+  max-width: 1600px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+
+/* ============================================
+   PAGE HEADER
+   ============================================ */
+
+.pageHeader {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.headerLeft {
+  flex: 1;
+  min-width: 250px;
+}
+
+.headerLeft h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #000000;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.headerLeft h1 svg {
+  font-size: 1.75rem;
+}
+
+.headerLeft p {
+  font-size: 0.938rem;
+  color: #6b7280;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* View Tabs */
+.viewTabs {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.tabBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.5rem;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #6b7280;
+  border-radius: 8px;
+  font-size: 0.938rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.tabBtn svg {
+  font-size: 1rem;
+}
+
+.tabBtn:hover {
+  border-color: #000000;
+  color: #000000;
+  background: #f9fafb;
+}
+
+.tabBtn.active {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+/* ============================================
+   CONTROLS SECTION
+   ============================================ */
+
+.controlsSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.searchWrapper {
+  position: relative;
+  flex: 1;
+  max-width: 500px;
+  min-width: 250px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  pointer-events: none;
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.875rem 1rem 0.875rem 2.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.938rem;
+  background: #ffffff;
+  color: #1f2937;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.searchInput::placeholder {
+  color: #9ca3af;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.addDriverButton {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.5rem;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.938rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+}
+
+.addDriverButton:hover {
+  background: #1f2937;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.addDriverButton svg {
+  font-size: 1rem;
+}
+
+/* ============================================
+   LOADING & EMPTY STATES
+   ============================================ */
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  gap: 1rem;
+}
+
+.loadingSpinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e5e7eb;
+  border-top-color: #000000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingContainer p {
+  color: #6b7280;
+  font-size: 0.938rem;
+  font-weight: 500;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #f9fafb;
+  border-radius: 12px;
+  border: 2px dashed #e5e7eb;
+}
+
+.emptyState svg {
+  color: #d1d5db;
+  margin-bottom: 1rem;
+  width: 4rem;
+  height: 4rem;
+}
+
+.emptyState h3 {
+  font-size: 1.5rem;
+  color: #000000;
+  margin: 0 0 0.75rem 0;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.emptyState p {
+  color: #6b7280;
+  font-size: 0.938rem;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* ============================================
+   DRIVERS GRID
+   ============================================ */
+
+.driversGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.driverCard {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.75rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.driverCard:hover {
+  border-color: #9ca3af;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
+
+.driverHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.driverAvatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e5e7eb;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.driverCard:hover .driverAvatar {
+  border-color: #000000;
+}
+
+.driverNameSection {
+  flex: 1;
+  min-width: 0;
+}
+
+.driverName {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 0.25rem 0;
+  letter-spacing: -0.3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.driverLicenseText {
+  font-size: 0.813rem;
+  color: #6b7280;
+  margin: 0;
+  font-weight: 500;
+  font-family: 'Courier New', monospace;
+}
+
+.driverInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.infoItem svg {
+  color: #6b7280;
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+}
+
+.status {
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  display: inline-block;
+  font-size: 0.813rem;
+  letter-spacing: 0.3px;
+}
+
+.statusactive,
+.statusavailable {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.statusinactive {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.statusonduty {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.licenseLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  background: #f9fafb;
+  color: #000000;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
+  border: 1px solid #e5e7eb;
+  width: fit-content;
+}
+
+.licenseLink:hover {
+  background: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+.licenseLink svg {
+  width: 0.938rem;
+  height: 0.938rem;
+}
+
+.driverActions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.actionBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  background: #ffffff;
+  color: #000000;
+  font-family: 'Inter', sans-serif;
+}
+
+.actionBtn:hover {
+  background: #f9fafb;
+  border-color: #000000;
+}
+
+.actionBtn svg {
+  width: 0.938rem;
+  height: 0.938rem;
+}
+
+/* ============================================
+   PAGINATION
+   ============================================ */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.paginationBtn,
+.paginationNav {
+  padding: 0.625rem 0.875rem;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #000000;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.paginationBtn:hover,
+.paginationNav:hover:not(:disabled) {
+  border-color: #9ca3af;
+  background: #f9fafb;
+}
+
+.paginationBtn.active {
+  background: #000000;
+  border-color: #000000;
+  color: #ffffff;
+}
+
+.paginationNav:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   NOTIFICATION
+   ============================================ */
+
+.notification {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  z-index: 2000;
+  animation: slideIn 0.3s ease-out;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 320px;
+  border: 1px solid;
+  font-size: 0.938rem;
+}
+
+.notificationSuccess {
+  background: #ffffff;
+  color: #166534;
+  border-color: #86efac;
+}
+
+.notificationSuccess svg {
+  color: #166534;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+.notificationError {
+  background: #ffffff;
+  color: #991b1b;
+  border-color: #fca5a5;
+}
+
+.notificationError svg {
+  color: #991b1b;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+.notification button {
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.notification button:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.notification button svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   FORM STYLES (ADD/EDIT)
+   ============================================ */
+
+.formContainer {
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.formHeader {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.formHeader h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+.formHeader p {
+  color: #6b7280;
+  font-size: 0.938rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.formLabel {
+  font-weight: 600;
+  color: #000000;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.formLabel svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.formInput,
+.formSelect {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.938rem;
+  background: #ffffff;
+  color: #1f2937;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.formInput::placeholder {
+  color: #9ca3af;
+}
+
+.formInput:focus,
+.formSelect:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.formInput:disabled {
+  background: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.locationDisplay {
+  padding: 0.875rem 1rem;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: #374151;
+  font-size: 0.938rem;
+  font-weight: 500;
+}
+
+.locationDisplay svg {
+  width: 1rem;
+  height: 1rem;
+  color: #6b7280;
+}
+
+.fileInputWrapper {
+  position: relative;
+}
+
+.fileInputWrapper input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+}
+
+.fileInputButton {
+  padding: 0.875rem 1rem;
+  border: 2px dashed #d1d5db;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  color: #6b7280;
+  font-weight: 500;
+  font-size: 0.938rem;
+}
+
+.fileInputButton:hover {
+  border-color: #000000;
+  background: #f3f4f6;
+  color: #000000;
+}
+
+.fileInputButton.hasFile {
+  border-style: solid;
+  border-color: #000000;
+  background: #f3f4f6;
+  color: #000000;
+}
+
+.fileInputButton svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.formActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  grid-column: 1 / -1;
+}
+
+.btn {
+  padding: 0.875rem 2rem;
+  border: none;
+  font-weight: 600;
+  font-size: 0.938rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.btnPrimary {
+  background: #000000;
+  color: #ffffff;
+}
+
+.btnPrimary:hover:not(:disabled) {
+  background: #1f2937;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btnSecondary {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #e5e7eb;
+}
+
+.btnSecondary:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   EDIT MODAL IMAGE SECTION
+   ============================================ */
+
+.imageSection {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  align-items: center;
+}
+
+.currentImage {
+  text-align: center;
+}
+
+.imageLabel {
+  font-size: 0.813rem;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.driverImage {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e5e7eb;
+}
+
+.uploadSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.uploadSection label {
+  cursor: pointer;
+}
+
+.uploadButton {
+  padding: 0.875rem 1.25rem;
+  border: 2px dashed #d1d5db;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  color: #6b7280;
+  font-size: 0.938rem;
+}
+
+.uploadButton:hover {
+  border-color: #000000;
+  background: #f3f4f6;
+  color: #000000;
+}
+
+.uploadButton svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.uploadHint {
+  font-size: 0.813rem;
+  color: #9ca3af;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .driverContainer {
+    margin-top: 70px;
+  }
+
+  .driversGrid {
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .driverContainer {
+    padding: 1.5rem 1rem;
+    margin-top: 70px;
+  }
+
+  .pageHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+  }
+
+  .headerLeft h1 {
+    font-size: 1.5rem;
+  }
+
+  .viewTabs {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .tabBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .controlsSection {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchWrapper {
+    max-width: 100%;
+  }
+
+  .addDriverButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .driversGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .driverCard {
+    padding: 1.25rem;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .imageSection {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .formActions {
+    flex-direction: column-reverse;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .notification {
+    left: 1rem;
+    right: 1rem;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .driverContainer {
+    padding: 1rem 0.75rem;
+    margin-top: 65px;
+  }
+
+  .pageHeader {
+    padding: 1rem;
+  }
+
+  .headerLeft h1 {
+    font-size: 1.25rem;
+  }
+
+  .headerLeft h1 svg {
+    font-size: 1.25rem;
+  }
+
+  .headerLeft p {
+    font-size: 0.813rem;
+  }
+
+  .searchInput {
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    font-size: 0.875rem;
+  }
+
+  .driverCard {
+    padding: 1rem;
+  }
+
+  .driverHeader {
+    gap: 0.75rem;
+  }
+
+  .driverAvatar {
+    width: 64px;
+    height: 64px;
+    border-width: 2px;
+  }
+
+  .driverName {
+    font-size: 1rem;
+  }
+
+  .driverLicenseText {
+    font-size: 0.75rem;
+  }
+
+  .infoItem {
+    font-size: 0.813rem;
+    gap: 0.625rem;
+  }
+
+  .driverActions {
+    gap: 0.5rem;
+  }
+
+  .actionBtn {
+    padding: 0.625rem 0.75rem;
+    font-size: 0.813rem;
+  }
+
+  .pagination {
+    gap: 0.375rem;
+  }
+
+  .paginationBtn,
+  .paginationNav {
+    padding: 0.5rem 0.625rem;
+    min-width: 36px;
+    font-size: 0.813rem;
+  }
+
+  .notification {
+    padding: 0.875rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .formHeader h2 {
+    font-size: 1.375rem;
+  }
+
+  .formHeader p {
+    font-size: 0.875rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+}

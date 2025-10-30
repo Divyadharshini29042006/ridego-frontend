@@ -1,0 +1,403 @@
+.vehicleManagement {
+  min-height: 100vh;
+  padding: 120px 20px 60px;
+  background: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #666666;
+  font-weight: 400;
+}
+
+.filters {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+}
+
+.searchBox {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999999;
+}
+
+.searchField {
+  width: 100%;
+  padding: 18px 20px 18px 52px;
+  border: 2px solid #e5e5e5;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #ffffff;
+  color: #000000;
+  transition: border-color 0.2s;
+}
+
+.searchField:focus {
+  outline: none;
+  border-color: #000000;
+}
+
+.searchField::placeholder {
+  color: #999999;
+}
+
+.filterRow {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.filterItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.filterLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.selectField {
+  padding: 12px 16px;
+  border: 2px solid #e5e5e5;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #000000;
+  font-size: 15px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.selectField:focus {
+  outline: none;
+  border-color: #000000;
+}
+
+.resultCount {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.countText {
+  background: #000000;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 80px 20px;
+  color: #666666;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #e5e5e5;
+  border-top: 3px solid #000000;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 20px;
+}
+
+.error {
+  background: #f5f5f5;
+  border-radius: 12px;
+  color: #000000;
+  border: 2px solid #e5e5e5;
+}
+
+.errorText {
+  margin-top: 16px;
+  font-size: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+  margin: 0;
+}
+
+.card {
+  background: #ffffff;
+  border: 2px solid #e5e5e5;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: #000000;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.imageWrapper {
+  position: relative;
+  height: 240px;
+  width: 100%;
+  overflow: hidden;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.rate {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #000000;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.content {
+  padding: 24px;
+}
+
+.categoryBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f5f5f5;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.vehicleName {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #666666;
+}
+
+.detailLabel {
+  font-weight: 600;
+  color: #000000;
+  min-width: 70px;
+}
+
+.detailText {
+  color: #000000;
+  font-weight: 400;
+}
+
+.statusWrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.status {
+  padding: 10px 24px;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 140px;
+  text-align: center;
+}
+
+.footer {
+  padding: 20px 24px;
+  border-top: 2px solid #2a2e80;
+  background: transparent;
+}
+
+.actionBtn {
+  width: 100%;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.actionBtn:hover {
+  background: #333333;
+  transform: translateY(-2px);
+}
+
+.empty {
+  text-align: center;
+  padding: 80px 20px;
+  color: #666666;
+  background: #f5f5f5;
+  border-radius: 12px;
+  border: 2px solid #e5e5e5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.emptyTitle {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 24px 0 12px;
+  color: #000000;
+}
+
+.emptyText {
+  font-size: 16px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.clearBtn {
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+}
+
+.clearBtn:hover {
+  background: #333333;
+  transform: translateY(-2px);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 1400px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .vehicleManagement {
+    padding: 100px 20px 40px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .filterRow {
+    flex-direction: column;
+  }
+
+  .filterItem {
+    min-width: auto;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .searchField {
+    padding: 16px 20px 16px 52px;
+    font-size: 15px;
+  }
+}

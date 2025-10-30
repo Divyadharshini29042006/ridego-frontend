@@ -1,0 +1,763 @@
+/* frontend/src/styles/BookingSuccess.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main Container */
+.modern-booking-container {
+  min-height: 100vh;
+  background: #ffffff;
+  padding: 60px 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.modern-success-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.modern-header {
+  text-align: center;
+  margin-bottom: 60px;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.check-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background: #10b981;
+  border-radius: 50%;
+  margin-bottom: 30px;
+  animation: scaleIn 0.6s ease-out;
+  box-shadow: 0 10px 40px rgba(16, 185, 129, 0.3);
+}
+
+.check-icon {
+  font-size: 60px;
+  color: #ffffff;
+}
+
+.modern-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 16px;
+  letter-spacing: -2px;
+  line-height: 1.1;
+}
+
+.modern-subtitle {
+  font-size: 20px;
+  color: #6b7280;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  max-width: 600px;
+  margin: 0 auto 24px;
+}
+
+.confirmation-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 50px;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.badge-icon {
+  font-size: 14px;
+  color: #fbbf24;
+}
+
+/* Booking ID Card */
+.booking-id-card {
+  background: #f9fafb;
+  border: 2px solid #e5e7eb;
+  border-radius: 24px;
+  padding: 32px;
+  margin-bottom: 40px;
+  animation: fadeInUp 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.booking-id-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.05), transparent);
+  animation: shimmer 3s infinite;
+}
+
+.booking-id-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.booking-id-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-box {
+  width: 56px;
+  height: 56px;
+  background: #10b981;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.booking-id-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.booking-id-label {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.booking-id-number {
+  font-family: 'Courier New', monospace;
+  font-size: 28px;
+  font-weight: 800;
+  color: #000000;
+  letter-spacing: 2px;
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background: #1f2937;
+}
+
+.download-btn:active {
+  transform: translateY(0);
+}
+
+/* Grid Layout */
+.modern-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.modern-grid-main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.modern-grid-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Modern Card */
+.modern-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease-out;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.modern-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-color: #d1d5db;
+}
+
+.modern-card-header {
+  padding: 24px 32px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.modern-card-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  letter-spacing: -0.5px;
+}
+
+.header-icon {
+  font-size: 20px;
+  color: #10b981;
+}
+
+.modern-card-body {
+  padding: 32px;
+}
+
+/* Detail Items */
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.detail-item-icon {
+  font-size: 18px;
+  color: #10b981;
+}
+
+.detail-item-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.detail-item-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: #000000;
+  text-align: right;
+  max-width: 50%;
+}
+
+/* Vehicle Items */
+.vehicle-item {
+  padding: 24px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+.vehicle-item:last-child {
+  margin-bottom: 0;
+}
+
+.vehicle-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.vehicle-item-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+}
+
+.vehicle-badge {
+  padding: 6px 16px;
+  background: #10b981;
+  color: #ffffff;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.vehicle-item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vehicle-detail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.vehicle-detail-icon {
+  font-size: 14px;
+  color: #10b981;
+}
+
+/* Next Steps Card */
+.next-steps-card {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.next-steps-card .modern-card-header {
+  background: #dcfce7;
+  border-color: #bbf7d0;
+}
+
+.steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.steps-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #d1fae5;
+  font-size: 15px;
+  color: #065f46;
+  line-height: 1.6;
+}
+
+.steps-list li:last-child {
+  border-bottom: none;
+}
+
+.step-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background: #10b981;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Payment Card */
+.payment-card {
+  position: sticky;
+  top: 20px;
+  background: #fef3c7;
+  border-color: #fde68a;
+}
+
+.payment-card .modern-card-header {
+  background: #fef08a;
+  border-color: #fde68a;
+}
+
+.payment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  font-size: 15px;
+}
+
+.payment-label {
+  color: #78350f;
+  font-weight: 500;
+}
+
+.payment-value {
+  color: #000000;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.payment-id {
+  font-family: 'Courier New', monospace;
+  color: #000000;
+  font-weight: 600;
+  font-size: 13px;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.payment-divider {
+  height: 1px;
+  background: #fde68a;
+  margin: 16px 0;
+}
+
+.payment-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 0;
+  border-top: 2px solid #fbbf24;
+}
+
+.payment-total-label {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.payment-total-value {
+  font-size: 32px;
+  font-weight: 900;
+  color: #000000;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Support Card */
+.support-card {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.support-card .modern-card-header {
+  background: #dbeafe;
+  border-color: #bfdbfe;
+}
+
+.support-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #dbeafe;
+}
+
+.support-item:last-child {
+  border-bottom: none;
+}
+
+.support-icon {
+  width: 40px;
+  height: 40px;
+  background: #3b82f6;
+  color: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.support-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.support-label {
+  font-size: 12px;
+  color: #1e40af;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.support-value {
+  font-size: 15px;
+  color: #000000;
+  font-weight: 600;
+}
+
+/* Action Buttons */
+.modern-actions {
+  display: flex;
+  gap: 20px;
+  animation: fadeInUp 0.8s ease-out;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+}
+
+.modern-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px 32px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.modern-btn-primary {
+  background: #000000;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.modern-btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  background: #1f2937;
+}
+
+.modern-btn-primary:active {
+  transform: translateY(-2px);
+}
+
+.modern-btn-secondary {
+  background: transparent;
+  color: #000000;
+  border: 2px solid #000000;
+}
+
+.modern-btn-secondary:hover {
+  background: #000000;
+  color: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.modern-btn-secondary:active {
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .modern-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modern-grid-sidebar {
+    order: -1;
+  }
+
+  .payment-card {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .modern-booking-container {
+    padding: 40px 16px;
+  }
+
+  .modern-title {
+    font-size: 40px;
+  }
+
+  .modern-subtitle {
+    font-size: 16px;
+  }
+
+  .check-icon-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+
+  .check-icon {
+    font-size: 40px;
+  }
+
+  .booking-id-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .booking-id-number {
+    font-size: 20px;
+  }
+
+  .download-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .modern-card-header {
+    padding: 20px 24px;
+  }
+
+  .modern-card-header h2 {
+    font-size: 18px;
+  }
+
+  .modern-card-body {
+    padding: 24px;
+  }
+
+  .detail-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .detail-item-value {
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .payment-total-value {
+    font-size: 24px;
+  }
+
+  .modern-actions {
+    flex-direction: column;
+  }
+
+  .modern-btn {
+    width: 100%;
+  }
+
+  .vehicle-item {
+    padding: 20px;
+  }
+
+  .vehicle-item-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .modern-title {
+    font-size: 32px;
+  }
+
+  .booking-id-card {
+    padding: 24px;
+  }
+
+  .icon-box {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+
+  .booking-id-number {
+    font-size: 18px;
+  }
+
+  .modern-card-header {
+    padding: 16px 20px;
+  }
+
+  .modern-card-body {
+    padding: 20px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .modern-booking-container {
+    background: white;
+    padding: 20px;
+  }
+
+  .download-btn,
+  .modern-actions {
+    display: none;
+  }
+
+  .modern-card {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  .modern-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}

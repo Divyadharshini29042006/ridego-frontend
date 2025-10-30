@@ -1,0 +1,678 @@
+/* AdminQueryDashboard.module.css */
+
+/* Base Styles */
+.minHScreen {
+  min-height: 100vh;
+}
+
+.bgGradientToBr {
+  background: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+.fromSlate50 {
+  --tw-gradient-from: #f8fafc;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(248, 250, 252, 0));
+}
+
+.viaWhite {
+  --tw-gradient-stops: var(--tw-gradient-from), #ffffff, var(--tw-gradient-to, rgba(255, 255, 255, 0));
+}
+
+.toBlue50 {
+  --tw-gradient-to: #eff6ff;
+}
+
+/* Header Styles */
+.bgWhite80 {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.backdropBlurXl {
+  backdrop-filter: blur(24px);
+}
+
+.sticky {
+  position: sticky;
+}
+
+.top0 {
+  top: 0;
+}
+
+.z10 {
+  z-index: 10;
+}
+
+.z50 {
+  z-index: 50;
+}
+
+.borderB {
+  border-bottom-width: 1px;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.borderGray200 {
+  border-color: #e5e7eb;
+}
+
+.borderGray100 {
+  border-color: #f3f4f6;
+}
+
+.borderGray300 {
+  border-color: #d1d5db;
+}
+
+/* Container & Layout */
+.maxW7xl {
+  max-width: 80rem;
+}
+
+.maxW2xl {
+  max-width: 42rem;
+}
+
+.mxAuto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wFull {
+  width: 100%;
+}
+
+/* Padding & Spacing */
+.px6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.py6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.py8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.p4 {
+  padding: 1rem;
+}
+
+.p6 {
+  padding: 1.5rem;
+}
+
+.p8 {
+  padding: 2rem;
+}
+
+.p12 {
+  padding: 3rem;
+}
+
+.px4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.py3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.py4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.px2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.px3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.py1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+/* Margins */
+.mb1 {
+  margin-bottom: 0.25rem;
+}
+
+.mb2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb4 {
+  margin-bottom: 1rem;
+}
+
+.mb6 {
+  margin-bottom: 1.5rem;
+}
+
+.mb8 {
+  margin-bottom: 2rem;
+}
+
+.mt4 {
+  margin-top: 1rem;
+}
+
+/* Flexbox */
+.flex {
+  display: flex;
+}
+
+.flexCol {
+  flex-direction: column;
+}
+
+.itemsCenter {
+  align-items: center;
+}
+
+.justifyBetween {
+  justify-content: space-between;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.gap2 {
+  gap: 0.5rem;
+}
+
+.gap3 {
+  gap: 0.75rem;
+}
+
+.gap4 {
+  gap: 1rem;
+}
+
+.gap6 {
+  gap: 1.5rem;
+}
+
+.flex1 {
+  flex: 1 1 0%;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+}
+
+.gridCols1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 768px) {
+  .mdGridCols3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  .mdGridCols4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Icon Sizes */
+.w5 {
+  width: 1.25rem;
+}
+
+.h5 {
+  height: 1.25rem;
+}
+
+.w6 {
+  width: 1.5rem;
+}
+
+.h6 {
+  height: 1.5rem;
+}
+
+.w7 {
+  width: 1.75rem;
+}
+
+.h7 {
+  height: 1.75rem;
+}
+
+.w10 {
+  width: 2.5rem;
+}
+
+.h10 {
+  height: 2.5rem;
+}
+
+.w12 {
+  width: 3rem;
+}
+
+.h12 {
+  height: 3rem;
+}
+
+.w14 {
+  width: 3.5rem;
+}
+
+.h14 {
+  height: 3.5rem;
+}
+
+.w16 {
+  width: 4rem;
+}
+
+.h16 {
+  height: 4rem;
+}
+
+.w20 {
+  width: 5rem;
+}
+
+.h20 {
+  height: 5rem;
+}
+
+.h32 {
+  height: 8rem;
+}
+
+/* Border Radius */
+.roundedLg {
+  border-radius: 0.5rem;
+}
+
+.roundedXl {
+  border-radius: 0.75rem;
+}
+
+.rounded2xl {
+  border-radius: 1rem;
+}
+
+.roundedFull {
+  border-radius: 9999px;
+}
+
+/* Background Colors */
+.bgWhite {
+  background-color: #ffffff;
+}
+
+.bgGray50 {
+  background-color: #f9fafb;
+}
+
+.bgGray100 {
+  background-color: #f3f4f6;
+}
+
+.bgGray200 {
+  background-color: #e5e7eb;
+}
+
+.bgBlue100 {
+  background-color: #dbeafe;
+}
+
+.bgBlue200 {
+  background-color: #bfdbfe;
+}
+
+.bgGreen100 {
+  background-color: #d1fae5;
+}
+
+.bgYellow100 {
+  background-color: #fef3c7;
+}
+
+.bgPurple100 {
+  background-color: #f3e8ff;
+}
+
+.bgRed100 {
+  background-color: #fee2e2;
+}
+
+.bgRed800 {
+  background-color: #991b1b;
+}
+
+/* Gradient Backgrounds */
+.bgGradientToBrIcon {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+.fromEmerald600 {
+  --tw-gradient-from: #059669;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(5, 150, 105, 0));
+}
+
+.toTeal600 {
+  --tw-gradient-to: #0d9488;
+}
+
+.bgGradientToR {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.fromGray50 {
+  --tw-gradient-from: #f9fafb;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(249, 250, 251, 0));
+}
+
+.toBlue50Table {
+  --tw-gradient-to: #eff6ff;
+}
+
+/* Text Colors */
+.textWhite {
+  color: #ffffff;
+}
+
+.textGray400 {
+  color: #9ca3af;
+}
+
+.textGray500 {
+  color: #6b7280;
+}
+
+.textGray600 {
+  color: #4b5563;
+}
+
+.textGray700 {
+  color: #374151;
+}
+
+.textGray900 {
+  color: #111827;
+}
+
+.textBlue600 {
+  color: #2563eb;
+}
+
+.textBlue700 {
+  color: #1d4ed8;
+}
+
+.textGreen600 {
+  color: #059669;
+}
+
+.textYellow600 {
+  color: #d97706;
+}
+
+.textPurple600 {
+  color: #9333ea;
+}
+
+.textPurple700 {
+  color: #7e22ce;
+}
+
+.textRed600 {
+  color: #dc2626;
+}
+
+.textGreen800 {
+  color: #065f46;
+}
+
+.textBlue800 {
+  color: #1e40af;
+}
+
+.textYellow800 {
+  color: #92400e;
+}
+
+/* Typography */
+.textXs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.textSm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.textLg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.textXl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.fontMedium {
+  font-weight: 500;
+}
+
+.fontSemibold {
+  font-weight: 600;
+}
+
+.fontBold {
+  font-weight: 700;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.textLeft {
+  text-align: left;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.lineClamp2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Shadows */
+.shadowSm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.shadowMd {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.shadow2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.hoverShadowMd:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Transitions & Animations */
+.transition {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.animateSpin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.border4 {
+  border-width: 4px;
+}
+
+.borderBlue600 {
+  border-color: #2563eb;
+}
+
+.borderTTransparent {
+  border-top-color: transparent;
+}
+
+/* Button Styles */
+.bgBlue600 {
+  background-color: #2563eb;
+}
+
+.hoverBgBlue700:hover {
+  background-color: #1d4ed8;
+}
+
+.bgGreen600 {
+  background-color: #059669;
+}
+
+.hoverBgGreen700:hover {
+  background-color: #047857;
+}
+
+.bgGray200Btn {
+  background-color: #e5e7eb;
+}
+
+.hoverBgGray300:hover {
+  background-color: #d1d5db;
+}
+
+.hoverBgBlue200:hover {
+  background-color: #bfdbfe;
+}
+
+/* Hover Effects */
+.hoverBgGray50:hover {
+  background-color: #f9fafb;
+}
+
+/* Table Styles */
+.overflowHidden {
+  overflow: hidden;
+}
+
+.overflowXAuto {
+  overflow-x: auto;
+}
+
+.divideY {
+  border-top-width: 1px;
+}
+
+.divideGray100 > :not([hidden]) ~ :not([hidden]) {
+  border-top-width: 1px;
+  border-color: #f3f4f6;
+}
+
+/* Status Badge Styles */
+.inlineBlock {
+  display: inline-block;
+}
+
+/* Form Elements */
+.focusRing2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.5);
+}
+
+.focusRingBlue500:focus {
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.5);
+}
+
+.focusBorderTransparent:focus {
+  border-color: transparent;
+}
+
+.resizeNone {
+  resize: none;
+}
+
+/* Modal */
+.fixed {
+  position: fixed;
+}
+
+.inset0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.bgBlack50 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.backdropBlurSm {
+  backdrop-filter: blur(4px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .text3xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
